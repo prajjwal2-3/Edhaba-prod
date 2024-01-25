@@ -6,7 +6,7 @@ const Restcard = (resobj)=>{
              CDN_url  + resobj.resdata1.info.cloudinaryImageId
               }/>
            <h3>{resobj.resdata1.info.name}</h3>
-           {console.log(resobj.resdata1.info.name)}
+           {/* {console.log(resobj.resdata1.info.name)} */}
            <h4>{resobj.resdata1.info.locality}</h4> 
            <h4>{resobj.resdata1.info.avgRatingString} stars</h4>
            <h4>{resobj.resdata1.info.cuisines.join(", ")}</h4>
