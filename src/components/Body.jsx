@@ -1,6 +1,7 @@
 import Restcard from "./Rescard";
 // import resdata from "../utils/mockdata";
 import { useEffect, useState } from "react";
+import Shimmer from "./shimmer";
 
 const Body = () => {
   //this allows us to update the ui according to db changes
@@ -45,7 +46,7 @@ const Body = () => {
     };
   if(isloading){
     return(
-      <p>loading..</p>
+      <Shimmer />
     )
   }else{
     return (
@@ -69,6 +70,6 @@ const Body = () => {
     );
   }
 
-};
+}
 
 export default Body;
