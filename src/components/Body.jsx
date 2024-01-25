@@ -1,33 +1,49 @@
 import Restcard from "./Rescard";
 import resdata from "../utils/mockdata";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Body = () => {
-  const [list, setList] = useState(resdata);
+  const [list, setList] = useState([]);
 
+  useEffect(()=>{
+    fetchdata();
+  },[])
+
+  const fetchdata = async ()=>{
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+    const json  = await data.json();
+
+    console.log(json.data.cards[1].card.card.gridElements.infoWithStyle);
+    setList(json.data.cards[1].card.card.gridElements.infoWithStyle)
+  }
+
+  const handleFilter = () => {
+    const newResdata = list.restaurants.filter(
+      (restaurant) => restaurant.info.avgRating > 4
+    );
+    setList({ ...list, restaurants: newResdata });
+    // console.log(newResdata);
+    };
   return (
     <div className="body">
       <div className="filter">
         <button
           className="btn-filter"
-          onClick={() => {
-            const newResdata = resdata.restaurants.filter(
-              (restaurants) => restaurants.info.avgRating > 4
-            );
-            setList({ ...list, restaurants: newResdata });
-            console.log(newResdata);
-          }}
+          onClick={handleFilter}
         >
           Top rated restaurants
         </button>
       </div>
       <div className="restcontainer">
-        {list.restaurants.map((restaurant, index) => (
-          <Restcard key={index} resdata1={restaurant} />
+        {list.restaurants.map((restaurants, index) => (
+          <Restcard key={index} resdata1={restaurants} />
         ))}
       </div>
     </div>
   );
+
 };
 
 export default Body;
