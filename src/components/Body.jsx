@@ -21,10 +21,10 @@ const Body = () => {
 
       const json = await data.json();
 
-      console.log(json.data.cards[1].card.card.gridElements.infoWithStyle);
+      console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
 
       setList(json.data.cards[1].card.card.gridElements.infoWithStyle);
-      setafterfilter(json.data.cards[1].card.card.gridElements.infoWithStyle);
+      setafterfilter(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
       setisloading(false);
     } catch (error) {
       setisloading(false);
@@ -67,7 +67,7 @@ const Body = () => {
       </div>
 
       <div className="restcontainer">
-        {afterfilter.restaurants.map((res, index) => (
+        {afterfilter.map((res, index) => (
           <Restcard key={index} resdata1={res} />
         ))}
       </div>
