@@ -44,12 +44,8 @@ const Body = () => {
     setList({ ...list, restaurants: newResdata });
     
     };
-  if(isloading){
-    return(
-      <Shimmer />
-    )
-  }else{
-    return (
+  
+    return isloading ? <Shimmer /> : (
       <div className="body">
         <div className="filter">
           <button
@@ -68,7 +64,7 @@ const Body = () => {
         </div>
       </div>
     );
-  }
+  
 
 }
 
