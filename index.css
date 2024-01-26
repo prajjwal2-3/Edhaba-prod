@@ -74,3 +74,6 @@ flex-wrap: wrap;
     border-radius: 19px;
     margin-bottom: 20px;
 }
+.bars{
+    display: flex;
+}

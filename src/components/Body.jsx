@@ -42,10 +42,16 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
+      <div className="bars">
+      <div className="search">
+        <input type="text" className="search-input" />
+        <button>search</button>
+      </div>
       <div className="filter">
         <button className="btn-filter" onClick={handleFilter}>
           Top rated restaurants
         </button>
+      </div>
       </div>
 
       <div className="restcontainer">
