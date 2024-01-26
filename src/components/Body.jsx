@@ -5,8 +5,9 @@ import Shimmer from "./shimmer";
 
 const Body = () => {
   const [list, setList] = useState([]);
-
+  const [searchtext, setsearchtext] = useState([]);
   const [isloading, setisloading] = useState(true);
+  const [afterfilter, setafterfilter] = useState([])
 
   useEffect(() => {
     fetchdata();
@@ -23,7 +24,7 @@ const Body = () => {
       console.log(json.data.cards[1].card.card.gridElements.infoWithStyle);
 
       setList(json.data.cards[1].card.card.gridElements.infoWithStyle);
-
+      setafterfilter(json.data.cards[1].card.card.gridElements.infoWithStyle);
       setisloading(false);
     } catch (error) {
       setisloading(false);
@@ -38,14 +39,25 @@ const Body = () => {
     setList({ ...list, restaurants: newResdata });
   };
 
+  const filterfunction = ()=>{
+  const filteredlist = list.restaurants.filter(
+        (res) => res.info.name.toLowerCase().includes(searchtext.toLowerCase())
+  );
+  setafterfilter(filteredlist);
+  console.log("search button pressed")
+  console.log(filteredlist)
+  }
+
   return isloading ? (
     <Shimmer />
   ) : (
     <div className="body">
       <div className="bars">
       <div className="search">
-        <input type="text" className="search-input" />
-        <button>search</button>
+        <input type="text" className="search-input" value={searchtext} onChange={(e)=>{
+        setsearchtext(e.target.value);
+        }} />
+        <button onClick={filterfunction}>search</button>
       </div>
       <div className="filter">
         <button className="btn-filter" onClick={handleFilter}>
@@ -55,8 +67,8 @@ const Body = () => {
       </div>
 
       <div className="restcontainer">
-        {list.restaurants.map((restaurants, index) => (
-          <Restcard key={index} resdata1={restaurants} />
+        {afterfilter.restaurants.map((res, index) => (
+          <Restcard key={index} resdata1={res} />
         ))}
       </div>
     </div>
