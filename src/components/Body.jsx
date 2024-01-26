@@ -36,7 +36,8 @@ const Body = () => {
     const newResdata = list.restaurants.filter(
       (restaurant) => restaurant.info.avgRating > 4
     );
-    setList({ ...list, restaurants: newResdata });
+    setList(list => ({ ...list, restaurants: newResdata }));
+    console.log(newResdata);
   };
 
   const filterfunction = ()=>{
