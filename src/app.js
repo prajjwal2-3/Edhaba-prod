@@ -34,8 +34,7 @@ const appRouter = createBrowserRouter([
         element: <Contact />,
       },
     ],
-    
-    errorElement: <Error/>
+        errorElement: <Error/>
   },
   
 ])
