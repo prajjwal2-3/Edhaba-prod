@@ -11,6 +11,7 @@ const Body = () => {
 
   useEffect(() => {
     fetchdata();
+    console.log("called")
   }, []);
 
   const fetchdata = async () => {

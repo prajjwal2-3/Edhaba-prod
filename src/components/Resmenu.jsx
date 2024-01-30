@@ -1,23 +1,23 @@
 import { useEffect } from "react";
-
+import { useParams } from "react-router-dom";
+import { MENU_API } from "../utils/constants";
 
 const Resmenu = () => {
+const {resID} = useParams();
 
-    useEffect(()=>{
+ useEffect(()=>{
         apicall();
-    },[])
+        console.log("called")
+    })
 
     const apicall = async () => {
-        try {
-          const response = await fetch(
-            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-          );
-              const json = await response.json();
-              console.log(json);
-              console.log("called")
-             
-          } catch (error) {
-         console.log(error);
+        try{
+            const data = await fetch(MENU_API + resID)
+            const json = await data.json();
+            console.log(json)
+        }
+        catch(error){
+         console.log(error)
         }
       };
     return(
