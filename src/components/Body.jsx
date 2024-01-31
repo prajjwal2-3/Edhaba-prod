@@ -2,6 +2,7 @@ import Restcard from "./Rescard";
 // import resdata from "../utils/mockdata";
 import { useEffect, useState } from "react";
 import Shimmer from "./shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [list, setList] = useState([]);
@@ -22,10 +23,17 @@ const Body = () => {
 
       const json = await data.json();
 
-      console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
-
-      setList(json.data.cards[1].card.card.gridElements.infoWithStyle);
-      setafterfilter(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+      console.log(json);
+      let dataIndex;
+      for (let i = 1; i <= 4; i++) {
+        if (json.data.cards[i].card.card.hasOwnProperty('gridElements')) {
+          dataIndex = i;
+          console.log(i)
+          break;  // Exit the loop once 'gridElements' is found
+        }
+      }
+      setList(json.data.cards[dataIndex].card.card.gridElements.infoWithStyle);
+      setafterfilter(json.data.cards[dataIndex].card.card.gridElements.infoWithStyle.restaurants);
       setisloading(false);
     } catch (error) {
       setisloading(false);
@@ -69,9 +77,11 @@ const Body = () => {
       </div>
 
       <div className="restcontainer">
-        {afterfilter.map((res, index) => (
-          <Restcard key={index} resdata1={res} />
+        {afterfilter.map((res) => (
+          <Link to={"/restaurants/"+res.info.id} key={res.info.id}><Restcard   resdata1={res} /></Link>
+         
         ))}
+      
       </div>
     </div>
   );

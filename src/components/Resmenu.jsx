@@ -26,7 +26,15 @@ const [menu, setmenu] = useState(null);
       if(menu === null) return <Shimmer />;
 
       const {name,cuisines,city,locality,avgRatingString,isOpen} = menu.cards[0].card.card.info;
-      const menulist = menu.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards;
+      let dataIndex;
+      for (let i = 1; i <= 4; i++) {
+        if (menu.cards[2].groupedCard.cardGroupMap.REGULAR.cards[i].card.card.hasOwnProperty('itemCards')) {
+          dataIndex = i;
+          console.log(i)
+          break;  
+        }
+      }
+      const menulist = menu.cards[2].groupedCard.cardGroupMap.REGULAR.cards[dataIndex].card.card.itemCards;
       const menunames= menulist.map(item => item.card.info.name)
       console.log(menunames);
     return(
@@ -40,10 +48,11 @@ const [menu, setmenu] = useState(null);
             <p>{city}</p>
             <p>{isOpen}</p>
             <h2 className="menulist">
-                <ul>
-                    {menunames}
-                    
-                </ul>
+       <div>
+       {menunames.map((element, index) => (
+        <li key={index}>{element}</li>
+      ))}
+       </div>
             </h2>
         </div>
     )
