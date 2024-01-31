@@ -79,7 +79,7 @@ const Body = () => {
 
       <div className="restcontainer">
         {afterfilter.map((res) => (
-          <Link to={"/restaurants/"+res.info.id} key={res.info.id}><Restcard   resdata1={res} /></Link>
+          <Link to={"/restaurants/"+res.info.id} key={res.info.id} className="linkr"><Restcard   resdata1={res} /></Link>
          
         ))}
       
