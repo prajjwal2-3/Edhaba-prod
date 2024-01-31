@@ -26,7 +26,9 @@ const [menu, setmenu] = useState(null);
       if(menu === null) return <Shimmer />;
 
       const {name,cuisines,city,locality,avgRatingString,isOpen} = menu.cards[0].card.card.info;
-      
+      const menulist = menu.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards;
+      const menunames= menulist.map(item => item.card.info.name)
+      console.log(menunames);
     return(
         
         
@@ -39,7 +41,7 @@ const [menu, setmenu] = useState(null);
             <p>{isOpen}</p>
             <h2 className="menulist">
                 <ul>
-                    <li>biryani</li>
+                    {menunames}
                     
                 </ul>
             </h2>

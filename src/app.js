@@ -5,7 +5,7 @@ import Body from "./components/Body";
 import Aboutpage from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
-import Resmenu from "./components/Resmenu";
+import Resmenu from "./components/resmenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const Applayout = () => {
