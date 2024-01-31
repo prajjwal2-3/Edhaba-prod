@@ -3,6 +3,7 @@ import Restcard from "./Rescard";
 import { useEffect, useState } from "react";
 import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
+import { RES_API } from "../utils/constants";
 
 const Body = () => {
   const [list, setList] = useState([]);
@@ -18,7 +19,7 @@ const Body = () => {
   const fetchdata = async () => {
     try {
       const data = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        RES_API
       );
 
       const json = await data.json();
