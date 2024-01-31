@@ -12,7 +12,7 @@ const Body = () => {
 
   useEffect(() => {
     fetchdata();
-    console.log("called")
+    console.log("Api called")
   }, []);
 
   const fetchdata = async () => {
@@ -23,12 +23,13 @@ const Body = () => {
 
       const json = await data.json();
 
-      console.log(json);
+      console.log("below is api data ")
+            console.log(json)
       let dataIndex;
       for (let i = 1; i <= 4; i++) {
         if (json.data.cards[i].card.card.hasOwnProperty('gridElements')) {
           dataIndex = i;
-          console.log(i)
+          console.log("restaurants are found in index " + i)
           break;  // Exit the loop once 'gridElements' is found
         }
       }

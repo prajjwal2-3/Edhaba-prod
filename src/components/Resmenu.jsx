@@ -9,13 +9,14 @@ const [menu, setmenu] = useState(null);
 
  useEffect(()=>{
         apicall();
-        console.log("called")
+        console.log("Menu api called")
     },[])
 
     const apicall = async () => {
         try{
             const data = await fetch(MENU_API + resID)
             const json = await data.json();
+            console.log("below is menu data ")
             console.log(json)
           setmenu(json.data)
         }
@@ -26,16 +27,28 @@ const [menu, setmenu] = useState(null);
       if(menu === null) return <Shimmer />;
 
       const {name,cuisines,city,locality,avgRatingString,isOpen} = menu.cards[0].card.card.info;
-      let dataIndex;
-      for (let i = 1; i <= 4; i++) {
-        if (menu.cards[2].groupedCard.cardGroupMap.REGULAR.cards[i].card.card.hasOwnProperty('itemCards')) {
-          dataIndex = i;
-          console.log(i)
+      let dataIndex1;
+      let menufound =false;
+      for (let i = 0; i <= 4; i++) {
+        if (menu.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[i]?.card?.card?.hasOwnProperty('itemCards')) {
+          dataIndex1 = i;
+         menufound=true;
+          console.log("menu is found on index "+i)
           break;  
         }
       }
-      const menulist = menu.cards[2].groupedCard.cardGroupMap.REGULAR.cards[dataIndex].card.card.itemCards;
-      const menunames= menulist.map(item => item.card.info.name)
+     if(!menufound){
+        console.log("menu not found")
+        return(
+            <>
+            <div>
+                <h1>no menu</h1>
+            </div>
+            </>
+        )
+     }
+      const menulist = menu.cards[2].groupedCard.cardGroupMap.REGULAR.cards[dataIndex1].card.card.itemCards;
+      const menunames= menulist.map(item => item.card.info)
       console.log(menunames);
     return(
         
@@ -50,7 +63,7 @@ const [menu, setmenu] = useState(null);
             <h2 className="menulist">
        <div>
        {menunames.map((element, index) => (
-        <li key={index}>{element}</li>
+        <li key={index}>{element.name}-Rs {element.defaultPrice/100 || element.price/100}</li>
       ))}
        </div>
             </h2>
