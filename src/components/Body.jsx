@@ -4,12 +4,14 @@ import { useEffect, useState } from "react";
 import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
 import { RES_API } from "../utils/constants";
+import useOlinestat from "../utils/useOnlinestat";
 
 const Body = () => {
   const [list, setList] = useState([]);
   const [searchtext, setsearchtext] = useState([]);
   const [isloading, setisloading] = useState(true);
   const [afterfilter, setafterfilter] = useState([]);
+
 
   useEffect(() => {
     fetchdata();
@@ -62,6 +64,10 @@ const Body = () => {
     console.log("search button pressed");
     console.log(filteredlist);
   };
+  const onlinestat = useOlinestat();
+  if(onlinestat === false) return (
+    <h1>you're offline</h1>
+  );
 
   return isloading ? (
     <Shimmer />
