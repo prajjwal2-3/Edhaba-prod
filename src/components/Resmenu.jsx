@@ -10,7 +10,7 @@ const Resmenu = () => {
   const { name, cuisines, city, locality, avgRatingString, isOpen } =
     menu.cards[0].card.card.info;
   let dataIndex1;
-  let menufound = false;
+  let menufound = false; 
   for (let i = 0; i <= 4; i++) {
     if (
       menu.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[
