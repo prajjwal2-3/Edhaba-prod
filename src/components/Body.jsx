@@ -71,10 +71,11 @@ const Body = () => {
 
   return isloading ? (
     <Shimmer />
+    
   ) : (
     <div className="body">
       <div className="bars">
-        <div className="search">
+        <div className="search p-2 m-4">
           <input
             type="text"
             className="search-input"
@@ -83,7 +84,7 @@ const Body = () => {
               setsearchtext(e.target.value);
             }}
           />
-          <button onClick={filterfunction}>search</button>
+          <button className="px-4 py-2 bg-green-400 rounded-lg" onClick={filterfunction}>search</button>
         </div>
         <div className="filter">
           <button className="btn-filter" onClick={handleFilter}>
@@ -92,12 +93,12 @@ const Body = () => {
         </div>
       </div>
 
-      <div className="restcontainer">
+      <div className="flex flex-wrap mx-auto mb-10 text-center text-pretty justify-center ">
         {afterfilter.map((res) => (
           <Link
             to={"/restaurants/" + res.info.id}
             key={res.info.id}
-            className="linkr"
+            className="linkr mb-6"
           >
             <Restcard resdata1={res} />
           </Link>
