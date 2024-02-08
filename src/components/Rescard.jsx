@@ -1,7 +1,7 @@
 import { CDN_url } from "../utils/constants";
 const Restcard = (resobj)=>{
     return(
-        <div className="m-4 border-2 p-2 w-60 h-full rounded-lg shadow-lg hover:shadow-2xl text-slate-800 ">
+        <div className="m-4 border-2 p-2 w-60 h-full rounded-lg shadow-lg hover:shadow-2xl hover:bg-gray-300 hover:scale-110 transition-transform duration-300 text-slate-800 ">
           <img className="rounded-lg w-56 h-44" alt="image didnt load" src={
              CDN_url  + resobj.resdata1.info.cloudinaryImageId
               }/>
