@@ -74,8 +74,8 @@ const Body = () => {
     
   ) : (
     <div className="body">
-      <div className="bars">
-        <div className="search p-2 m-4">
+      <div className="bars flex">
+        <div className="search ">
           <input
             type="text"
             className="search-input"
@@ -86,8 +86,8 @@ const Body = () => {
           />
           <button className="px-4 py-2 bg-green-400 rounded-lg" onClick={filterfunction}>search</button>
         </div>
-        <div className="filter">
-          <button className="btn-filter" onClick={handleFilter}>
+        <div className="filter p-2 m-4 ">
+          <button className=" px-4 py-2 bg-green-400 rounded-lg" onClick={handleFilter}>
             Top rated restaurants
           </button>
         </div>
