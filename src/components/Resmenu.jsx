@@ -41,7 +41,7 @@ const Resmenu = () => {
   return (
     <div className="menu">
       <h1 className="title">{name}</h1>
-      <p>{cuisines.join("")}</p>
+      <p>{cuisines.join(", ")}</p>
       <p>{avgRatingString}* stars</p>
       <p>{locality}</p>
       <p>{city}</p>
