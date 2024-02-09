@@ -65,7 +65,7 @@ const Resmenu = () => {
       <h2 className="menulist">
         <div className=" flex flex-col ">
           {menunames.map((element, index) => (
-            <div key={index} className="mx-28 m-6 p-4 rounded-md shadow-md ">
+            <div key={index} className="mx-28 m-6 p-4 rounded-md shadow-md hover:scale-110 transition-transform duration-300 ">
               <div className="p-1 items-center flex justify-between">
                 <div className="">
                   <p className="text-xl">
