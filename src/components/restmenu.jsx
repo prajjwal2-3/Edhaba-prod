@@ -54,7 +54,7 @@ const Resmenu = () => {
           <p>{locality}</p>
           <p>{city}</p>
           <p>{avgRatingString}* stars</p>
-          <p>Restaurant: {isOpen.toString() ? "Open✅" : "Closed🔴"}</p>
+          {/* <p>Restaurant: {isOpen.toString() ? "Open✅" : "Closed🔴"}</p> */}
         </div>
         <img
           className="rounded-lg w-52 shadow-2xl  h-44"
