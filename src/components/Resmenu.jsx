@@ -71,7 +71,7 @@ const Resmenu = () => {
                   <p>
                     {element.name}
                   </p>
-                  <p>Rs{" "}
+                  <p className="text-green-500">₹{" "}
                     {element.defaultPrice / 100 || element.price / 100}</p>
                 </div>
                 <div className="item-center">
