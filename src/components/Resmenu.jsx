@@ -42,7 +42,7 @@ const Resmenu = () => {
     <div className="menu  justify-center">
       <div className="flex justify-center h-52 items-center bg-slate-600">
       <div className="m-2 ">
-      <h1 className="font-extrabold text-white "></h1>
+      <h1 className="font-extrabold text-white ">{name}</h1>
       <p>{cuisines.join(", ")}</p>
       <p>{avgRatingString}* stars</p>
       <p>{locality}</p>
