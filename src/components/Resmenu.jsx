@@ -63,16 +63,17 @@ const Resmenu = () => {
         />
       </div>
       <h2 className="menulist">
-        <div className=" flex flex-col text-center">
+        <div className=" flex flex-col ">
           {menunames.map((element, index) => (
             <div key={index} className="mx-28 m-6 p-4 rounded-md shadow-md ">
-              <div className="p-1 items-center flex justify-evenly">
+              <div className="p-1 items-center flex justify-between">
                 <div className="">
-                  <p>
+                  <p className="text-xl">
                     {element.name}
                   </p>
                   <p className="text-green-500">₹{" "}
                     {element.defaultPrice / 100 || element.price / 100}</p>
+                    <p className="text-sm text-gray-500">{element.description}</p>
                 </div>
                 <div className="item-center">
                   <img
