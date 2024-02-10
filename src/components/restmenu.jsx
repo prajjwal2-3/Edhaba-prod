@@ -6,8 +6,13 @@ import AccordionUsage from "./Menuaccordian1";
 const Resmenu = () => {
   const { resID } = useParams();
   const menu = useResmenu(resID);
+ 
   if (menu === null) return <Shimmer />;
-
+  const categ = menu.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+    (c)=>
+      c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+     )
+     console.log(categ)
   const {
     name,
     cuisines,
@@ -55,7 +60,7 @@ const Resmenu = () => {
           <p>{locality}</p>
           <p>{city}</p>
           <p>{avgRatingString}* stars</p>
-          {/* <p>Restaurant: {isOpen.toString() ? "Open✅" : "Closed🔴"}</p> */}
+          
         </div>
         <img
           className="rounded-lg w-52 shadow-2xl  h-44"
