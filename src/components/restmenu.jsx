@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import useResmenu from "../utils/useResmenu";
 import Shimmer from "./shimmer";
 import { CDN_url } from "../utils/constants";
+import AccordionUsage from "./Menuaccordian1";
 const Resmenu = () => {
   const { resID } = useParams();
   const menu = useResmenu(resID);
@@ -87,7 +88,9 @@ const Resmenu = () => {
           ))}
         </div>
       </h2>
+      <AccordionUsage/>
     </div>
+    
   );
 };
 export default Resmenu;
