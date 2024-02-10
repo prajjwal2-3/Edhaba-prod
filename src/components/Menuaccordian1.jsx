@@ -19,7 +19,7 @@ export default function AccordionUsage({data}) {
           aria-controls="panel1-content"
           id="panel1-header"
         >
-          {data.title}
+          {data.title}-({data.itemCards.length})
         </AccordionSummary>
         <AccordionDetails>
         <div className="menu ">
@@ -37,7 +37,7 @@ export default function AccordionUsage({data}) {
                  </p>
                  <p className="text-green-500">₹{" "}
                    {element.card.info.defaultPrice / 100 || element.card.info.price / 100}</p>
-                   <div className="text-sm text-gray-500 text-ellipsis">{element.card.info.description}</div>
+                   <div className="text-sm  text-gray-500 text-clip">{element.card.info.description}</div>
                </div>
                <div className="item-center">
                  <img
