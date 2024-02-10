@@ -3,6 +3,7 @@ import useResmenu from "../utils/useResmenu";
 import Shimmer from "./shimmer";
 import { CDN_url } from "../utils/constants";
 import AccordionUsage from "./Menuaccordian1";
+import Categories from "./Categories";
 const Resmenu = () => {
   const { resID } = useParams();
   const menu = useResmenu(resID);
@@ -51,6 +52,8 @@ const Resmenu = () => {
       .itemCards;
   const menunames = menulist.map((item) => item.card.info);
   console.log(menunames);
+  const categname= categ.map((item) => item.card?.card?.title)
+  console.log(categname)
   return (
     <div className="menu ">
       <div className="flex justify-evenly  h-56 items-center bg-slate-600">
@@ -94,6 +97,7 @@ const Resmenu = () => {
         </div>
       </h2>
       <AccordionUsage/>
+     <Categories/>
     </div>
     
   );
