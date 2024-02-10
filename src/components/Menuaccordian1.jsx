@@ -12,7 +12,7 @@ export default function AccordionUsage({data}) {
    const menunames = data.itemCards;
   
   return (
-    <div>
+    <div className='shadow-sm m-2 p-2 '>
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -37,7 +37,7 @@ export default function AccordionUsage({data}) {
                  </p>
                  <p className="text-green-500">₹{" "}
                    {element.card.info.defaultPrice / 100 || element.card.info.price / 100}</p>
-                   <p className="text-sm text-gray-500">{element.card.info.description}</p>
+                   <div className="text-sm text-gray-500 text-ellipsis">{element.card.info.description}</div>
                </div>
                <div className="item-center">
                  <img

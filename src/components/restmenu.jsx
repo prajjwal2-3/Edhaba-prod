@@ -29,7 +29,23 @@ const Resmenu = () => {
         console.log(categ)
   
   return (
-     <div className="">
+   <>
+    <div className="flex justify-evenly  h-56 items-center bg-slate-600">
+    <div className="m-4 p-2 flex flex-col text-center">
+      <h1 className="font-extrabold text-4xl text-gray-300 ">{name}</h1>
+      <p>{cuisines.join(", ")}</p>
+      <p>{locality}</p>
+      <p>{city}</p>
+      <p>{avgRatingString}* stars</p>
+      
+    </div>
+    <img
+      className="rounded-lg w-52 shadow-2xl  h-44"
+      alt="image didnt load"
+      src={CDN_url + cloudinaryImageId}
+    />
+  </div>
+     <div className="flex text-center justify-center w-6/12 m-auto">
       <p>
         {categ.map((element,index) => (
           <AccordionUsage key = {index} data={element?.card?.card} />
@@ -37,23 +53,10 @@ const Resmenu = () => {
         ))}
       </p>
      </div>
+   </>
     // <div className="menu ">
      
-    //   <div className="flex justify-evenly  h-56 items-center bg-slate-600">
-    //     <div className="m-4 p-2 flex flex-col text-center">
-    //       <h1 className="font-extrabold text-4xl text-gray-300 ">{name}</h1>
-    //       <p>{cuisines.join(", ")}</p>
-    //       <p>{locality}</p>
-    //       <p>{city}</p>
-    //       <p>{avgRatingString}* stars</p>
-          
-    //     </div>
-    //     <img
-    //       className="rounded-lg w-52 shadow-2xl  h-44"
-    //       alt="image didnt load"
-    //       src={CDN_url + cloudinaryImageId}
-    //     />
-    //   </div>
+     
     //   <h2 className="menulist">
     //     <div className=" flex flex-col ">
     //       {menunames.map((element, index) => (
