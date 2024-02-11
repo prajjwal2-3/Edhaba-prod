@@ -29,7 +29,7 @@ export default function AccordionUsage({data}) {
        <div className=" flex flex-col ">
          {menunames.map((element, index) => (
            
-           <div key={index} className="mx-28 m-6 p-4 rounded-md shadow-md hover:scale-110 transition-transform duration-300 ">
+           <div key={index} className=" m-4 p-4 rounded-md shadow-md hover:scale-110 transition-transform duration-300 ">
              <div className="p-1 items-center flex justify-between">
                <div className="">
                  <p className="text-xl">
@@ -37,7 +37,7 @@ export default function AccordionUsage({data}) {
                  </p>
                  <p className="text-green-500">₹{" "}
                    {element.card.info.defaultPrice / 100 || element.card.info.price / 100}</p>
-                   <div className="text-sm  text-gray-500 text-clip">{element.card.info.description}</div>
+                   <div className="text-sm w-3/12 h-10 text-gray-500 overflow-hidden text-ellipsis">{element.card.info.description}</div>
                </div>
                <div className="item-center">
                  <img

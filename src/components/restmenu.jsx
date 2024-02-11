@@ -3,7 +3,7 @@ import useResmenu from "../utils/useResmenu";
 import Shimmer from "./shimmer";
 import { CDN_url } from "../utils/constants";
 import AccordionUsage from "./Menuaccordian1";
-import Categories from "./Categories";
+
 const Resmenu = () => {
   const { resID } = useParams();
   const menu = useResmenu(resID);
@@ -54,38 +54,7 @@ const Resmenu = () => {
       </p>
      </div>
    </>
-    // <div className="menu ">
-     
-     
-    //   <h2 className="menulist">
-    //     <div className=" flex flex-col ">
-    //       {menunames.map((element, index) => (
-            
-    //         <div key={index} className="mx-28 m-6 p-4 rounded-md shadow-md hover:scale-110 transition-transform duration-300 ">
-    //           <div className="p-1 items-center flex justify-between">
-    //             <div className="">
-    //               <p className="text-xl">
-    //                 {element.name}
-    //               </p>
-    //               <p className="text-green-500">₹{" "}
-    //                 {element.defaultPrice / 100 || element.price / 100}</p>
-    //                 <p className="text-sm text-gray-500">{element.description}</p>
-    //             </div>
-    //             <div className="item-center">
-    //               <img
-    //                 className="rounded-lg w-24  shadow-2xl"
-    //                 alt="image didnt load"
-    //                 src={CDN_url + element.imageId}
-    //               />
-    //             </div>
-    //           </div>
-    //         </div>
-    //       ))}
-    //     </div>
-    //   </h2>
-      
-     
-    // </div>
+   
     
   );
 };
