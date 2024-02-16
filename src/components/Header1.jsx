@@ -7,6 +7,7 @@ const Header = () => {
   const [button, setbutton] = useState("LOGIN");
   const onlinestat = useOlinestat();
   const cart = useSelector((store) => store.cart.items)
+  console.log(cart)
   return (
     <div className="flex justify-between shadow-lg px-10">
       <div className="logocontainer">
@@ -26,7 +27,10 @@ const Header = () => {
           <li className="px-4">
             <Link to="/contact" className="linkr">Contact us</Link>
           </li>
-          <li className="px-4">Cart-{cart.length}</li>
+          <li className="px-4">
+            <Link to="/cart" className="linkr">Cart-{cart.length} </Link>
+          </li>
+      
           <button 
             className="login px-4  bg-green-400 rounded-lg"
             onClick={() => {

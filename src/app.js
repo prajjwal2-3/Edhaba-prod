@@ -9,6 +9,7 @@ import Resmenu from "./components/restmenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Provider } from "react-redux";
 import Appstore from "./utils/Appstore";
+import Cart from "./components/Cart";
 const Applayout = () => {
   return (
     <Provider store={Appstore}>
@@ -45,6 +46,10 @@ const appRouter = createBrowserRouter([
        element: <Resmenu />,
        
       },
+      {
+        path: "/cart",
+        element: <Cart/>
+      }
       
     ],
         errorElement: <Error/>

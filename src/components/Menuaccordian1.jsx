@@ -6,11 +6,18 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
 import { CDN_url } from '../utils/constants';
+import { useDispatch } from 'react-redux';
+import { additem } from '../utils/Cartslice';
 
 export default function AccordionUsage({data}) {
-  console.log(data)
-   const menunames = data.itemCards;
   
+   const menunames = data.itemCards;
+  const dispatch = useDispatch();
+ const handleadd = (element) =>{
+  dispatch(additem(element.card.info))
+  
+ }
+
   return (
     <div className='shadow-sm m-2 p-2 '>
       <Accordion>
@@ -35,10 +42,15 @@ export default function AccordionUsage({data}) {
                  <p className="text-xl">
                    {element.card.info.name}
                  </p>
+                 
                  <p className="text-green-500">₹{" "}
-                   {element.card.info.defaultPrice / 100 || element.card.info.price / 100}</p>
+                   {element.card.info.defaultPrice / 100 || element.card.info.price / 100} 
+                   </p>
+                  
+                 
                    <div className="text-sm w-3/12 h-10 text-gray-500 overflow-hidden text-ellipsis">{element.card.info.description}</div>
                </div>
+               <button className='mx-4 rounded-md shadow-md bg-green-500 p-1' onClick={()=>{handleadd(element)}}>+</button>
                <div className="item-center">
                  <img
                    className="rounded-lg w-24  shadow-2xl"
