@@ -2,6 +2,7 @@ import { CDN_url } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { UseDispatch } from "react-redux";
 import { removeitem } from "../utils/Cartslice";
+import { clearcart } from "../utils/Cartslice";
 const Cart = () => {
     const data = useSelector((store)=> store.cart.items)
     console.log(data)
@@ -9,8 +10,12 @@ const Cart = () => {
     const handledelete = (index)=>{
       dispatch(removeitem(index))
     }
+    const clearcart1 = ()=>{
+        dispatch(clearcart())
+    }
     return(
         <h2 className="menulist w-6/12 mx-auto">
+            <div className="text-right"><button className="rounded-md shadow-lg mt-2 bg-red-400 p-2 " onClick={clearcart1}>Clear Cart</button></div>
         <div className=" flex flex-col ">
           {data.map((element, index) => (
             
