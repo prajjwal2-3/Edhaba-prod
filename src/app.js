@@ -7,16 +7,22 @@ import Contact from "./components/Contact";
 import Error from "./components/Error1";
 import Resmenu from "./components/restmenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-
+import { Provider } from "react-redux";
+import Appstore from "./utils/Appstore";
 const Applayout = () => {
   return (
-    <div className="app">
+    <Provider store={Appstore}>
+      <div className="app">
       <Header />
       <Outlet />
     </div>
+      </Provider>
   );
-};
-
+}; 
+<div className="app">
+      <Header />
+      <Outlet />
+    </div>
 const appRouter = createBrowserRouter([
   {
     path: "/",
