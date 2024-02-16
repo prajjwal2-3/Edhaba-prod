@@ -7,7 +7,7 @@ const Cart = () => {
     console.log(data)
    const dispatch = useDispatch();
     const handledelete = (index)=>{
-      dispatch(removeitem(index,1))
+      dispatch(removeitem(index))
     }
     return(
         <h2 className="menulist w-6/12 mx-auto">
