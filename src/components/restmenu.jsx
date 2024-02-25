@@ -7,7 +7,7 @@ import AccordionUsage from "./Menuaccordian1";
 const Resmenu = () => {
   const { resID } = useParams();
   const menu = useResmenu(resID);
- 
+ console.log(menu)
   if (menu === null) return <Shimmer />;
   
   const {
@@ -18,10 +18,10 @@ const Resmenu = () => {
     avgRatingString,
     isOpen,
     cloudinaryImageId,
-  } = menu?.cards[0]?.card?.card?.info;
+  } = menu?.cards[2]?.card?.card?.info;
   
 
-  const categ = menu.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+  const categ = menu.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
     (c)=>
       c.card?.card?.hasOwnProperty("itemCards")
      )
