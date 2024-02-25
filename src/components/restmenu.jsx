@@ -18,7 +18,7 @@ const Resmenu = () => {
     avgRatingString,
     isOpen,
     cloudinaryImageId,
-  } = menu.cards[0].card.card.info;
+  } = menu?.cards[0]?.card?.card?.info;
   
 
   const categ = menu.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(

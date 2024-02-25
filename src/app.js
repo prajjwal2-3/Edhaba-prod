@@ -20,10 +20,7 @@ const Applayout = () => {
       </Provider>
   );
 }; 
-<div className="app">
-      <Header />
-      <Outlet />
-    </div>
+
 const appRouter = createBrowserRouter([
   {
     path: "/",
