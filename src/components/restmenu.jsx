@@ -21,7 +21,7 @@ const Resmenu = () => {
   } = menu?.cards[0]?.card?.card?.info;
   
 
-  const categ = menu.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+  const categ = menu.cards[1]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
     (c)=>
       c.card?.card?.hasOwnProperty("itemCards")
      )
