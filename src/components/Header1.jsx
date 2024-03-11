@@ -9,30 +9,30 @@ const Header = () => {
   const cart = useSelector((store) => store.cart.items)
   console.log(cart)
   return (
-    <div className="flex justify-between shadow-lg px-10">
+    <div className="flex justify-between shadow-lg sm:px-10 ">
       <div className="logocontainer">
-        <img className="w-28" src={LOGO_url} />
+        <img className="sm:w-28 w-14" src={LOGO_url} />
       </div>
       <div className="flex  items-center">
-        <ul className="flex  p-4 m-4">
-          <li className="px-4">
-           online status: {onlinestat? "✅":"🔴"}
+        <ul className="flex  sm:p-4 sm:m-4">
+          <li className="sm:px-4 pr-1">
+           online: {onlinestat? "✅":"🔴"}
           </li>
-        <li className="px-4">
+        <li className="sm:px-4 pr-1">
             <Link to="/" className="linkr">Home</Link>
           </li>
-          <li className="px-4">
-            <Link to="/about" className="linkr">About Us</Link>
+          <li className="sm:px-4 pr-1">
+            <Link to="/about" className="linkr">About</Link>
           </li>
-          <li className="px-4">
-            <Link to="/contact" className="linkr">Contact us</Link>
+          <li className="sm:px-4 pr-1">
+            <Link to="/contact" className="linkr">Contact </Link>
           </li>
-          <li className="px-4">
+          <li className="sm:px-4 pr-1">
             <Link to="/cart" className="linkr">Cart-{cart.length} </Link>
           </li>
       
           <button 
-            className="login px-4  bg-green-400 rounded-lg"
+            className="login sm:px-4 px-1  bg-green-400 rounded-lg"
             onClick={() => {
               button === "LOGIN" ? setbutton("LOGOUT") : setbutton("LOGIN");
             }}

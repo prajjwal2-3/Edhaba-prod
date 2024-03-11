@@ -38,8 +38,8 @@ export default function AccordionUsage({data}) {
            
            <div key={index} className=" m-4 p-4 rounded-md shadow-md hover:scale-110 transition-transform duration-300 ">
              <div className="p-1 items-center flex justify-between">
-               <div className="">
-                 <p className="text-xl">
+               <div className="w-8/12">
+                 <p className="sm:text-xl text-sm">
                    {element.card.info.name}
                  </p>
                  
@@ -50,15 +50,18 @@ export default function AccordionUsage({data}) {
                  
                    <div className="text-sm w-3/12 h-10 text-gray-500 overflow-hidden text-ellipsis">{element.card.info.description}</div>
                </div>
-               <button className='mx-4 rounded-md shadow-md bg-green-500 p-1' onClick={()=>{handleadd(element)}}>+</button>
-               <div className="item-center">
+               
+               <div className="item-center w-4/12">
                  <img
-                   className="rounded-lg w-24  shadow-2xl"
+                   className="rounded-lg w-24 h-24  shadow-2xl"
                    alt="image didnt load"
                    src={CDN_url + element.card.info.imageId}
                  />
+                 <button className='mx-4 rounded-md absolute -mt-28 shadow-md bg-green-500 p-1' onClick={()=>{handleadd(element)}}>+</button>
                </div>
+               
              </div>
+             
            </div>
          ))}
        </div>

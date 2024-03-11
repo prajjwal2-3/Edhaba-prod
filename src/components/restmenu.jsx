@@ -30,7 +30,7 @@ const Resmenu = () => {
   
   return (
    <>
-    <div className="flex justify-evenly  h-56 items-center bg-slate-600">
+    <div className="flex justify-evenly   h-56 items-center bg-slate-600">
     <div className="m-4 p-2 flex flex-col text-center">
       <h1 className="font-extrabold text-4xl text-gray-300 ">{name}</h1>
       <p>{cuisines.join(", ")}</p>
@@ -40,12 +40,12 @@ const Resmenu = () => {
       
     </div>
     <img
-      className="rounded-lg w-52 shadow-2xl  h-44"
+      className="rounded-lg w-52 mr-4 shadow-2xl  h-44 "
       alt="image didnt load"
       src={CDN_url + cloudinaryImageId}
     />
   </div>
-     <div className="flex text-center justify-center w-6/12 m-auto">
+     <div className="flex text-center justify-center sm:w-6/12  m-auto">
       <p>
         {categ.map((element,index) => (
           <AccordionUsage key = {index} data={element?.card?.card} />

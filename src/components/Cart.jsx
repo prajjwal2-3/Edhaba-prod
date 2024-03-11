@@ -14,8 +14,8 @@ const Cart = () => {
     dispatch(clearcart());
   };
   return (
-    <h2 className="menulist w-6/12 mx-auto">
-      <div className="text-right">
+    <h2 className="menulist sm:w-6/12 mx-auto">
+      <div className=" text-center">
         <button
           className="rounded-md shadow-lg mt-2 bg-red-400 p-2 "
           onClick={clearcart1}
