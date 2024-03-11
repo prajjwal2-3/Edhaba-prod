@@ -1,16 +1,18 @@
 const Shimmer = () =>{
      return(
         <>
-        <div className="bars flex justify-center">
-        <div className="search p-2 m-4 ">
+         <div className=" flex sm:flex-row flex-col   justify-center">
+        <div className="search flex sm:p-2  m-4">
           <input
             type="text"
-            className="search-input border-2 p-2 mx-4 rounded-lg border-gray-300 focus:border-gray-600"
-                     />
-          <button className="px-4 py-2 bg-green-400 rounded-lg">search</button>
+            className="search-input border-2 sm:p-2 p-1 mx-auto rounded-lg border-gray-300 focus:border-gray-600"
+           
+           
+          />
+          <button className="sm:px-4 sm:py-2 px-1  mx-auto sm:mx-4 bg-green-400 rounded-lg" >search</button>
         </div>
-        <div className="filter p-2 m-4">
-          <button className=" px-4 py-2 bg-green-400 rounded-lg" >
+        <div className="filter sm:p-2 sm:m-4 mx-auto ">
+          <button className=" sm:px-4 sm:py-2 p-1 bg-green-400 rounded-lg" >
             Top rated restaurants
           </button>
         </div>
