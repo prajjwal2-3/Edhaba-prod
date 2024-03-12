@@ -32,7 +32,7 @@ const Resmenu = () => {
    <>
     <div className="flex justify-evenly   h-56 items-center bg-slate-600">
     <div className="m-4 p-2 flex flex-col text-center">
-      <h1 className="font-extrabold text-4xl text-gray-300 ">{name}</h1>
+      <h1 className="font-extrabold sm:text-4xl text-2xl text-gray-300 ">{name}</h1>
       <p>{cuisines.join(", ")}</p>
       <p>{locality}</p>
       <p>{city}</p>
